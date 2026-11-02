@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Fay by Haretna Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="top-row">
+      <img class="logo" src="images/logo.png" alt="Fay by Haretna" width="56" height="56">
+      <div class="brand">
+        <div class="brand-name"><span lang="en">Fay</span> <span lang="ar">في</span></div>
+        <div class="brand-sub" id="hours"></div>
+      </div>
+      <div class="lang" role="group" aria-label="Language / اللغة">
+        <button type="button" data-lang="ar" lang="ar">عربي</button>
+        <button type="button" data-lang="en" lang="en">EN</button>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Menu"></nav>
+  </header>
+  <main class="pager" id="pager"></main>
+</div>
+<input type="file" id="pick" accept="image/*" hidden>
+<script src="js/menu-data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
