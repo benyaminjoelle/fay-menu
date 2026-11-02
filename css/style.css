@@ -2,7 +2,7 @@
    Background is the exact logo green (#686E4C) with a glass-mirror shine.
    Item boxes are white with a soft neutral shadow (no orange). */
 :root {
-  --bg: #686E4C;            /* exact logo green */
+  --bg: #848b63;            /* exact logo green */
   --glass: rgba(255, 255, 255, .14);
   --glass-line: rgba(255, 255, 255, .38);
   --card: #FFFFFF;          /* item boxes */
