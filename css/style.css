@@ -1,6 +1,6 @@
 /* Fay by Haretna: one screen app. Tabs on top, each tab is a page you swipe through.
    Background is the exact logo green (#686E4C) with a glass-mirror shine.
-   Item boxes are white with an orange shadow. */
+   Item boxes are white with a soft neutral shadow (no orange). */
 :root {
   --bg: #686E4C;            /* exact logo green */
   --glass: rgba(255, 255, 255, .14);
@@ -12,9 +12,9 @@
   --fg: #FFFFFF;
   --sand: #E4E1CB;
   --muted: #D5D3BC;
-  --sun: #E0903F;           /* orange of the logo sun */
+  --sun: #E0903F;           /* orange of the logo sun (used for prices and badges only) */
   --sun-fg: #2B2410;
-  --shadow: rgba(224, 144, 63, .55);   /* orange shadow */
+  --shadow: rgba(0, 0, 0, .16);        /* soft neutral shadow. Set to rgba(0,0,0,0) for no shadow */
   --font-display: 'Fraunces', Georgia, serif;
   --font-ar: 'Aref Ruqaa', 'Reem Kufi', Tahoma, sans-serif;   /* Arabic font close to the logo handwriting */
   --font-body: 'IBM Plex Sans Arabic', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
@@ -33,8 +33,7 @@ body::before {
   content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background:
     linear-gradient(115deg, rgba(255,255,255,.20) 0%, rgba(255,255,255,0) 28%, rgba(255,255,255,.08) 52%, rgba(255,255,255,0) 70%),
-    radial-gradient(circle at 12% 8%, rgba(255,255,255,.22), rgba(255,255,255,0) 42%),
-    radial-gradient(circle at 92% 88%, rgba(224,144,63,.22), rgba(224,144,63,0) 45%);
+    radial-gradient(circle at 12% 8%, rgba(255,255,255,.22), rgba(255,255,255,0) 42%);
 }
 .app { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; max-width: 720px; margin: 0 auto; }
 button { font: inherit; color: inherit; cursor: pointer; }
@@ -55,7 +54,7 @@ html[lang="ar"] .brand-name { font-family: var(--font-ar); font-weight: 700; }
 .tabs::-webkit-scrollbar { display: none; }
 .tab { flex: none; background: var(--glass); border: 1px solid var(--glass-line); border-radius: 99px; padding: 7px 16px; color: var(--fg); font-size: 14px; white-space: nowrap; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 html[lang="ar"] .tab { font-family: var(--font-ar); font-size: 16px; }
-.tab[aria-selected="true"] { background: #fff; color: var(--card-fg); border-color: #fff; font-weight: 600; box-shadow: 0 4px 14px var(--shadow); }
+.tab[aria-selected="true"] { background: #fff; color: var(--card-fg); border-color: #fff; font-weight: 600; }
 
 .pager { flex: 1; min-height: 0; display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
 .pager::-webkit-scrollbar { display: none; }
@@ -65,7 +64,7 @@ html[lang="ar"] .tab { font-family: var(--font-ar); font-size: 16px; }
 html[lang="ar"] .group-title { font-family: var(--font-ar); letter-spacing: 0; font-size: 20px; text-transform: none; }
 .items { display: flex; flex-direction: column; gap: 14px; }
 
-.item { display: flex; gap: 12px; background: var(--card); color: var(--card-fg); border-radius: 16px; padding: 10px; align-items: stretch; box-shadow: 0 8px 20px var(--shadow); }
+.item { display: flex; gap: 12px; background: var(--card); color: var(--card-fg); border-radius: 16px; padding: 10px; align-items: stretch; box-shadow: 0 4px 14px var(--shadow); }
 .photo { flex: none; width: 88px; height: 88px; border-radius: 12px; border: 1.5px dashed #B9B79E; background: var(--card-soft) center / cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: var(--card-muted); font-size: 11px; padding: 0; }
 .photo.has { border: 0; }
 .photo.has span, .photo.has svg { display: none; }
@@ -82,7 +81,7 @@ html[lang="ar"] .name { font-family: var(--font-ar); font-size: 18px; font-weigh
 .one { font-size: 15px; font-weight: 600; color: #C0701F; }
 .one small { color: var(--card-muted); font-weight: 400; margin-inline-start: 3px; }
 
-.offer { background: var(--card); color: var(--card-fg); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 8px 20px var(--shadow); }
+.offer { background: var(--card); color: var(--card-fg); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 4px 14px var(--shadow); }
 .offer h3 { margin: 0; font-family: var(--font-display); font-size: 20px; }
 html[lang="ar"] .offer h3 { font-family: var(--font-ar); font-size: 22px; }
 .offer p { margin: 0; font-size: 14px; color: var(--card-muted); }
